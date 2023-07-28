@@ -1,0 +1,213 @@
+/* start Features */
+.features {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  position: relative;
+  z-index: -1;
+}
+
+.features-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.features-content .box {
+  border: 1px solid #ddd;
+}
+
+.features-content .box .image {
+  position: relative;
+  height: 343.33px;
+}
+
+.features-content .box .image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.features-content .box .image:after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 60%;
+  clip-path: polygon(-50% 100%, 100% 20%, 102% 30%, 100% 100%);
+  transition: calc(var(--main-transition) - 0.25s);
+  -webkit-transition: calc(var(--main-transition) - 0.25s);
+  -moz-transition: calc(var(--main-transition) - 0.25s);
+  -ms-transition: calc(var(--main-transition) - 0.25s);
+  -o-transition: calc(var(--main-transition) - 0.25s);
+}
+
+.features-content .box:hover .image::after {
+  clip-path: polygon(-50% 100%, 0% 20%, 100% 90%, 100% 100%);
+}
+
+.features-content .box:first-child .image::before {
+  background-color: rgb(244 64 54 / 60%);
+}
+
+.features-content .box:nth-child(2) .image::before {
+  background-color: rgb(0 150 136 / 60%);
+}
+
+.features-content .box:last-child .image::before {
+  background-color: rgb(3 169 244 / 60%);
+}
+
+.features-content .box .image img {
+  width: 100%;
+  height: 100%;
+}
+
+.features-content .text h3 {
+  width: fit-content;
+  margin: 10px auto 50px;
+  font-size: 40px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  margin-bottom: 50px;
+  padding: 0 0px 15px;
+  position: relative;
+}
+
+.features-content .text h3::before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 6px;
+}
+
+.features-content .box:first-child h3::before {
+  background-color: rgb(244 64 54 / 100%);
+}
+
+.features-content .box:nth-child(2) h3::before {
+  background-color: rgb(0 150 136 / 100%);
+}
+
+.features-content .box:last-child h3::before {
+  background-color: rgb(3 169 244 / 100%);
+}
+
+.features-content .text p {
+  padding: 0 30px;
+  text-align: center;
+  line-height: 2;
+  font-size: 20px;
+  color: #777;
+}
+
+.features-content .box button {
+  padding: 10px 20px;
+  margin: 30px auto 50px;
+  display: block;
+  font-size: 20px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  outline: none;
+  border: 2px solid;
+  background-color: var(--color-white);
+  font-weight: 700;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  position: relative;
+  z-index: 3;
+}
+
+.features-content .box:first-child button {
+  color: rgb(244 64 54 / 100%);
+  border-color: rgb(244 64 54 / 100%);
+}
+
+.features-content .box:nth-child(2) button {
+  color: rgb(0 150 136 / 100%);
+  border-color: rgb(0 150 136 / 100%);
+}
+
+.features-content .box:last-child button {
+  color: rgb(3 169 244 / 100%);
+  border-color: rgb(3 169 244 / 100%);
+}
+
+.features-content .box:hover button {
+  color: var(--color-white);
+}
+
+.features-content .box button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  z-index: -1;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+
+.features-content .box button::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  bottom: 1px;
+  width: 90%;
+  height: 0.5px;
+  background-color: var(--color-white);
+}
+
+.features-content .box:hover button::before {
+  width: 100%;
+}
+
+.features-content .box:first-child:hover button::before {
+  background-color: rgb(244 64 54 / 100%);
+}
+
+.features-content .box:nth-child(2):hover button::before {
+  background-color: rgb(0 150 136 / 100%);
+}
+
+.features-content .box:last-child:hover button::before {
+  background-color: rgb(3 169 244 / 100%);
+}
+/* Dark Mode */
+body.dark .features {
+  background-color: var(--dark);
+  color: var(--light);
+}
+body.dark .features-content .box p {
+  color: var(--light);
+}
+body.dark .features-content .box .image:after,
+body.dark .features-content .box button {
+  background-color: #2f3640;
+}
+body.dark .features-content .box .image:after,
+body.dark .features-content .box button,
+body.dark .features-content .box p,
+body.dark .features {
+  transition: var(--main-transition);
+}
+/* End Features */

@@ -1,0 +1,123 @@
+/* start video */
+.video {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  position: relative;
+  z-index: -1;
+}
+
+.video-content {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--section-background);
+}
+
+@media (max-width: 991px) {
+  .video-content {
+    flex-direction: column;
+  }
+}
+
+.video-info {
+  flex-basis: 50%;
+  position: relative;
+  background-color: var(--color-white);
+  border: 1px solid #ccc;
+}
+
+@media (max-width: 991px) {
+  .video-info {
+    flex-basis: 100%;
+  }
+}
+
+.video-info h2 {
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  padding-bottom: 25px;
+  padding-left: 10px;
+  background-color: #f4f4f4;
+  padding-top: 10px;
+}
+
+.video-info i {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 18px;
+}
+
+.video-info ul {
+}
+
+.video-info ul li {
+  padding: 20px 10px;
+  border-top: 1px solid #ccc;
+  text-transform: capitalize;
+  transition: var(--main-transition);
+  cursor: pointer;
+}
+
+.video-info ul li:hover {
+  background-color: #f4f4f4;
+}
+
+.video-info ul li:hover a {
+  color: var(--main-color);
+}
+
+.video-info ul li a {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  transition: var(--main-transition);
+}
+
+.video-info ul li span {
+  margin-left: 5px;
+}
+
+.video-img {
+  width: 100%;
+  padding: 10px;
+}
+
+.video-img video {
+  width: 100%;
+}
+
+.video-img .video-desc {
+  margin-top: 23px;
+  padding-left: 10px;
+  background-color: var(--color-white);
+  padding: 20px 10px;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+/* Dark Mode */
+body.dark .video,
+body.dark .video-img .video-desc {
+  background-color: var(--dark);
+  color: var(--light);
+}
+body.dark .video-content,
+body.dark .video-info {
+  background-color: #2f3640;
+}
+body.dark .video-info h2,
+body.dark .video-info ul li:hover {
+  background-color: rgb(236 236 236 / 20%);
+}
+body.dark .video-info ul li a {
+  color: var(--light);
+}
+body.dark .video,
+body.dark .video-img .video-desc,
+body.dark .video-info ul li a,
+body.dark .video-info h2,
+body.dark .video-info ul li:hover,
+body.dark .video-content,
+body.dark .video-info {
+  transition: var(--main-transition);
+}
+/* End video */

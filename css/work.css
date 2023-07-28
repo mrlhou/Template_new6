@@ -1,0 +1,110 @@
+/* start Work-steps */
+.work-steps {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-background);
+  position: relative;
+  z-index: -1;
+}
+
+.work-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .work-content {
+    flex-direction: column;
+  }
+}
+
+.work-content img {
+  flex-basis: 25%;
+  max-width: 100%;
+  margin-bottom: 70px;
+}
+
+.work-content .work-info {
+  flex-basis: 50%;
+}
+
+@media (max-width: 991px) {
+  .work-content img {
+    flex-basis: 100%;
+  }
+
+  .work-content .work-info {
+    flex-basis: 100%;
+  }
+}
+
+.work-content .work-info .box {
+  position: relative;
+  padding: 30px 15px 30px 120px;
+  background-color: #f6f6f6;
+  margin-bottom: 15px;
+  border: 2px solid #f6f6f6;
+  z-index: 3;
+}
+
+.work-content .work-info .box::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background-color: var(--section-background);
+  transition: var(--main-transition);
+  z-index: -1;
+}
+
+.work-content .work-info .box:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.work-content .work-info .box-image {
+  position: absolute;
+  width: 65px;
+  left: 28px;
+  top: 22%;
+}
+
+.work-content .work-info .box-image img {
+  width: 100%;
+}
+
+.work-content .work-info .box h3 {
+  font-size: 25px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.work-content .work-info .box p {
+  color: #777;
+  line-height: 1.5;
+}
+/* Dark Mode */
+body.dark .work-steps {
+  background-color: #2f3640;
+  color: var(--light);
+}
+body.dark .work-content .work-info .box {
+  background-color: var(--dark);
+}
+body.dark .work-content .work-info .box p {
+  color: var(--light);
+}
+body.dark .work-content .work-info .box:hover::before {
+  background-color: rgb(236 236 236 / 20%);
+}
+body.dark .work-steps,
+body.dark .work-content .work-info .box:hover::before,
+body.dark .work-content .work-info .box p,
+body.dark .work-content .work-info .box {
+  transition: var(--main-transition);
+}
+/* End Work-steps */

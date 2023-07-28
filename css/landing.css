@@ -1,0 +1,127 @@
+/* start Landing */
+
+.landing {
+  height: 100vh;
+  background-color: var(--section-background);
+  position: relative;
+  z-index: -1;
+}
+
+.landing::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 180px;
+  width: 100%;
+  background-color: var(--color-white);
+  clip-path: polygon(0 66%, 100% 10%, 100% 100%, 0% 100%);
+}
+
+.landing i {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  color: var(--main-color);
+  animation: scrollAnimate 1s linear alternate infinite;
+  -webkit-animation: scrollAnimate 1s linear alternate infinite;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.landing .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.landing .text {
+  width: 45%;
+}
+
+.landing .text h1 {
+  margin: 0;
+  font-size: 43px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+.landing .text p {
+  color: #777;
+  line-height: 1.5;
+  font-size: 20px;
+}
+
+@media (max-width: 991px) {
+  .landing .text {
+    flex-basis: 100%;
+    text-align: center;
+  }
+  .landing .text h1 {
+    font-size: 35px;
+  }
+  .landing .text p {
+    font-size: 15px;
+    padding: 0 50px;
+  }
+}
+
+.landing .image-land {
+  margin-right: -68px;
+  width: 65%;
+  top: 0px;
+  position: relative;
+  animation: animate 3s linear infinite alternate none running;
+  -webkit-animation: animate 3s linear infinite alternate none running;
+}
+
+@media (max-width: 991px) {
+  .landing .image-land {
+    display: none;
+  }
+}
+
+.landing .image-land img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes animate {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: -70px;
+  }
+}
+
+@keyframes scrollAnimate {
+  0% {
+    bottom: 40px;
+  }
+  100% {
+    bottom: 30px;
+  }
+}
+
+/* Dark Mode */
+body.dark .landing {
+  background-color: var(--dark);
+  color: var(--light);
+}
+body.dark .landing::before {
+  background-color: #2f3640;
+}
+body.dark .landing p {
+  color: var(--light);
+}
+body.dark .landing,
+body.dark .landing p,
+body.dark .landing::before {
+  transition: var(--main-transition);
+}
+/* End Landing */

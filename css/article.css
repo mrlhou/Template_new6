@@ -1,0 +1,105 @@
+/* start Article */
+
+.article {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  position: relative;
+}
+
+.article-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px 25px;
+}
+
+.article-content .box {
+  background-color: var(--color-white);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px #ddd;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  overflow: hidden;
+}
+
+.article-content .box:hover {
+  box-shadow: 0px 2px 10px #ccc;
+  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+}
+
+.article-content .box .image img {
+  width: 100%;
+}
+
+.article-content .box-info h3 {
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  font-size: 23px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  padding: 20px 20px 10px;
+}
+
+.article-content .box-info p {
+  line-height: 1.5;
+  color: #777;
+  margin-left: 20px;
+}
+
+.article-content .box-info .box-link {
+  padding: 20px;
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+  position: relative;
+}
+
+.article-content .box-info .box-link a {
+  color: var(--main-color);
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.article-content .box-info .box-link i {
+  color: var(--main-color);
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+.article-content .box:hover i {
+  animation: to-right 0.8s linear 0.2s infinite;
+  -webkit-animation: to-right 0.8s linear 0.2s infinite;
+}
+
+@keyframes to-right {
+  0% {
+    right: 15px;
+  }
+  100% {
+    right: 10px;
+  }
+}
+/* Dark Mode */
+body.dark .article {
+  background-color: var(--dark);
+  z-index: -4;
+  color: var(--light);
+  transition: var(--main-transition);
+}
+body.dark .article-content .box {
+  background: linear-gradient(145deg, #2a313a, #323a44);
+  box-shadow: 20px 20px 60px #282e36, -20px -20px 60px #363e4a;
+  transition: var(--main-transition);
+}
+/* End Article */

@@ -1,0 +1,94 @@
+/* start stats */
+.stats {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-image: url(../images/stats.png);
+  background-size: cover;
+  z-index: -1;
+  position: relative;
+}
+
+.stats .container > h2 {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 40px;
+}
+
+.stats-content {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  text-align: center;
+  margin-top: 70px;
+}
+
+.stats-content .box {
+  padding: 20px;
+  background-color: var(--color-white);
+  margin: 10px;
+  position: relative;
+}
+
+.stats-content .box::before,
+.stats-content .box::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 0;
+  background-color: var(--main-color);
+  transition: calc(var(--main-transition) + 0.2s);
+  -webkit-transition: calc(var(--main-transition) + 0.2s);
+  -moz-transition: calc(var(--main-transition) + 0.2s);
+  -ms-transition: calc(var(--main-transition) + 0.2s);
+  -o-transition: calc(var(--main-transition) + 0.2s);
+}
+
+.stats-content .box::before {
+  top: 0;
+  left: 0;
+}
+
+.stats-content .box::after {
+  bottom: 0;
+  right: 0;
+}
+.stats-content .box:hover::before,
+.stats-content .box:hover::after {
+  height: 100%;
+}
+.stats-content .box i {
+  font-size: 30px;
+}
+
+.stats-content .box h2 {
+  font-size: 40px;
+  margin: 15px 0;
+}
+
+.stats-content .box span {
+  font-size: 20px;
+  text-transform: capitalize;
+  color: var(--main-color);
+  font-style: italic;
+  letter-spacing: 0.5px;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.stats-content .box:hover span {
+  opacity: 1;
+}
+
+/* Dark Mode */
+body.dark .stats-content .box {
+  background-color: var(--dark);
+  color: var(--light);
+  transition: var(--main-transition);
+}
+/* End stats */

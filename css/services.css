@@ -1,0 +1,126 @@
+/* start Services */
+.services {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-background);
+  position: relative;
+  z-index: -1;
+}
+
+.services-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.services-content .box {
+  width: 100%;
+  background-color: var(--color-white);
+  position: relative;
+  box-shadow: 0 2px 20px #ddd;
+  transition: var(--main-transition);
+}
+
+.services-content .box:hover {
+  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+  box-shadow: 0 2px 10px #ccc;
+}
+
+.services-content .box::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  height: 2px;
+  width: 0%;
+  background-color: var(--main-color);
+  transition: var(--main-transition);
+}
+
+.services-content .box:hover:before {
+  width: 100%;
+}
+
+.services-content .box i {
+  font-size: 60px;
+  margin: 25px 0 0px;
+  color: #999;
+}
+
+@media (max-width: 767px) {
+  .services-content .box i {
+    font-size: 55px;
+  }
+}
+
+.services-content .box h3 {
+  font-size: 25px;
+  padding: 10px 0 40px;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  color: var(--main-color);
+}
+
+.services-content .box .box-foot {
+  display: flex;
+  align-items: center;
+  background-color: var(--section-background);
+  justify-content: space-between;
+}
+
+.services-content .box .box-foot .num {
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 30px;
+  background-color: var(--main-color);
+  width: 30%;
+  position: relative;
+  color: var(--color-white);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.services-content .box .box-foot .num::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -38px;
+  width: 50px;
+  height: 100%;
+  background-color: #ccc;
+  transform: skewX(-24deg);
+}
+
+.services-content .box .box-foot a {
+  padding-right: 15px;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  color: var(--main-color);
+}
+
+/* Dark Mode */
+body.dark .services {
+  background-color: #2f3640;
+  color: var(--light);
+}
+body.dark .services-content .box {
+  background: linear-gradient(145deg, #2a313a, #323a44);
+  box-shadow: 20px 20px 60px #282e36, -20px -20px 60px #363e4a;
+}
+body.dark .services-content .box i {
+  color: var(--light);
+}
+body.dark .services,
+body.dark .services-content .box i,
+body.dark .services-content .box {
+  transition: var(--main-transition);
+}
+/* End Services */
